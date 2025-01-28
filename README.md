@@ -54,7 +54,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 ### Instalación
 1. Clona el repositorio:
    ```bash
-   git clone [https://github.com/rafaelgus/test-frontend.git]
+   git clone https://github.com/rafaelgus/test-frontend.git
    cd test-frontend-test
    ```
 
