@@ -1,5 +1,3 @@
-¡Por supuesto! Aquí tienes el contenido adaptado para un archivo `README.md`:
-
 ```markdown
 # WorldsAcross Frontend Test
 
@@ -56,8 +54,8 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 ### Instalación
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/worldsacross-frontend-test.git
-   cd worldsacross-frontend-test
+   git clone [https://github.com/rafaelgus/test-frontend.git]
+   cd test-frontend-test
    ```
 
 2. Instala las dependencias:
