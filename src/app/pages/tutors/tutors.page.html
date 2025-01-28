@@ -1,13 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>tutors</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tutores</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-toolbar>
-      <ion-title size="large">tutors</ion-title>
+      <ion-title size="large">Tutores</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-content>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterTutors()"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let tutor of filteredTutors">
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ tutor.first_name }} {{ tutor.last_name }}</h2>
+          <p>{{ tutor.speciality }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+
+    <ion-footer>
+      <ion-toolbar class="pagination-toolbar">
+        <ion-buttons slot="start">
+          <ion-button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= filteredTutors.length">Siguiente</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
 </ion-content>

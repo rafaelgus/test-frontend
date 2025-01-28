@@ -1,13 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>student</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Estudiantes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">student</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title size="large">Estudiantes</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let user of users" (click)="selectUser(user)">
+      <ion-avatar slot="start">
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-text color="danger" *ngIf="errorMessage">{{ errorMessage }}</ion-text>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="nextPage()">Siguiente</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>

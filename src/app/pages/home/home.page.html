@@ -1,13 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title>Registros</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">home</ion-title>
+      <ion-title size="large">Registros</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="card-container">
+    <ion-card>
+      
+      <ion-card-content>
+        
+        <ion-button fill="outline" class="center-button" routerLink="/student">Estudiantes</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      
+      <ion-card-content>
+       
+        <ion-button fill="outline" class="center-button" routerLink="/tutors">Tutores</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+     
+      <ion-card-content>
+       
+        <ion-button fill="outline" class="center-button" routerLink="/classes">Reservas</ion-button>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
